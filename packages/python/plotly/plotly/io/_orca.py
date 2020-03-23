@@ -1432,7 +1432,9 @@ Install using conda:
                 # specified port.
                 DEVNULL = open(os.devnull, "wb")
                 with orca_env():
-                    orca_state["proc"] = subprocess.Popen(cmd_list, stdout=DEVNULL)
+                    orca_state["proc"] = subprocess.Popen(
+                        cmd_list, stdout=DEVNULL, stderr=DEVNULL
+                    )
 
                 # Update orca.status so the user has an accurate view
                 # of the state of the orca server
